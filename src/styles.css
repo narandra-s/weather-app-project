@@ -1,0 +1,93 @@
+.weatherApp {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+h1 {
+  color: #ff6f3c;
+  font-family: "Amatic SC", cursive;
+  margin-top: 20px;
+}
+h2 {
+  font-size: 15px;
+  font-family: "Quicksand", sans-serif;
+}
+#description {
+  font-size: 13px;
+  font-family: "Quicksand", sans-serif;
+}
+.input-group {
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: "Amatic SC", cursive;
+}
+.header {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+}
+.current-weather {
+  margin: 0 auto;
+  padding: 5px;
+  max-width: 70%;
+}
+
+.current-temp {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #ff6f3c;
+  padding: 10px 0;
+}
+.current-stats {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+.next-days {
+  padding: 50px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+}
+.next-days-images {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+}
+
+#searchCity {
+  padding: 15px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.units {
+  text-decoration: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: -20px;
+  position: relative;
+  top: -30px;
+}
+#current-location-button {
+  padding: 8px;
+  border-radius: 5px;
+  margin-left: 15px;
+  background-color: rgb(131, 217, 242);
+  border-color: rgb(105, 170, 188);
+  box-shadow: 1px 1px 0.2px rgb(135, 135, 135);
+  color: #ff6f3c;
+  text-shadow: 0.5px 0.5px #615753;
+}
+.current-weather {
+  max-width: 95%;
+}

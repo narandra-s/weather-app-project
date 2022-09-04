@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andra's Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Quicksand&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/7b7ffc72c8.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Imported CSS file -->
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="weatherApp">
+      <form id="searchCity">
+        <input
+          type="text"
+          id="cityName"
+          placeholder="Search for city"
+          autofocus="on"
+        />
+        <input type="submit" id="submitBtn" value="Search" />
+        <span>
+          <button id="current-location-button">Current Location</button></span
+        >
+      </form>
+      <div class="header">
+        <h1>Cluj-Napoca</h1>
+        <h2>Tuesday, 19:00 PM</h2>
+        <div id="description">Partly Cloudy</div>
+      </div>
+      <div class="row current-weather">
+        <div class="col-4 main-icon">
+          <img src="image/15-Sun.png" />
+        </div>
+        <div class="col-4 current-temp">
+          <span class="temperature" id="temperature">30</span>
+          <span class="units"> °C </span>
+        </div>
+        <div class="col-4 current-stats">
+          Humidity: <span id="humidity"> 0</span>%
+          <br />
+          Wind: <span id="wind"> 2</span>km/h
+          <br />
+          Sunrise:<span id="sunrise"> 8AM</span>
+          <br />
+          Sunset: <span id="sunset"> 10PM</span>
+        </div>
+      </div>
+      <br />
+      <div class="row next-days">
+        <div class="col-2">
+          Wed
+          <img class="next-days-images" src="image/16--fair weather.png" />
+          27°C
+        </div>
+        <div class="col-2">
+          Thu
+          <img class="next-days-images" src="image/11-Partly Cloudy.png" />
+          31°C
+        </div>
+        <div class="col-2">
+          Fri
+          <img class="next-days-images" src="image/13-Scattered T-Storms.png" />
+          28°C
+        </div>
+        <div class="col-2">
+          Sat
+          <img class="next-days-images" src="image/15-Sun.png" />
+          34°C
+        </div>
+        <div class="col-2">
+          Sun
+          <img class="next-days-images" src="image/15-Sun.png" />
+          36°C
+        </div>
+        <div class="col-2">
+          Mon
+          <img class="next-days-images" src="image/15-Sun.png" />
+          35°C
+        </div>
+      </div>
+      <p class="footer">
+        <a href="https://google.com">Open Source Code</a> by Andra Sfetcu
+      </p>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/script.js"></script>
+  </body>
+</html>
