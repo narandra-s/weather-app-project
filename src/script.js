@@ -1,4 +1,4 @@
-// Update Date Format
+// Current Date & Time
 let now = new Date();
 let days = [
   "Sunday",
@@ -15,25 +15,27 @@ let meridiem = hour >= 12 ? "PM" : "AM";
 hour = hour % 12;
 hour = hour ? hour : 12;
 let minutes = String(now.getMinutes()).padStart(2, "0");
-let dateFormat = document.querySelector("h2");
+let dateFormat = document.querySelector("#date-time");
 dateFormat.innerHTML = `${day}, ${hour}:${minutes} ${meridiem}`;
-// Update City Name & Temp
+// Update City Name
+
 function showWeatherConditions(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#date-time").innerHTML = updateTime(
+    response.data.timezone * 1000
+  );
+
   // humidity
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   //wind
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
-
-  console.log(response.data);
   // sunrise
   let sunrise = response.data.sys.sunrise;
   let newSunriseDate = new Date(sunrise * 1000);
@@ -66,7 +68,6 @@ function updateCity(event) {
   let units = "metric";
   let apiUrl = `${prefix}q=${cityName}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeatherConditions);
-  console.log(apiUrl);
 }
 let city = document.querySelector("#searchCity");
 city.addEventListener("submit", updateCity);
@@ -102,13 +103,11 @@ function showCurrentTemperature(response) {
 }
 
 function showPosition(position) {
-  console.log(position.coords);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "8f38c157e578682615115dc60e2655cf";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showWeatherConditions);
 }
 
