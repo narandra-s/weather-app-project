@@ -26,6 +26,11 @@ li {
   text-align: center;
   font-family: "Quicksand", sans-serif;
 }
+
+.d-flex {
+  display: flex;
+  justify-content: flex-end;
+}
 #description {
   font-size: 13px;
   font-family: "Quicksand", sans-serif;

@@ -54,29 +54,32 @@
           <div id="description">Partly Cloudy</div>
         </div>
         <div class="row current-weather">
-          <div class="col-md-6 current-temp">
-            <img id="main-icon" src="image/15-Sun.png" />
-            <span class="temperature" id="temperature">30</span>
-            <span class="units"> °C </span>
+          <div class="d-flex weather-temperature">
+            <div class="col-md-6 current-temp">
+              <img id="main-icon" src="image/15-Sun.png" />
+              <span class="temperature" id="temperature">30</span>
+              <span class="units"> °C </span>
+            </div>
+            <div class="col-md-6 current-stats">
+              <ul>
+                <li>Humidity: <span id="humidity"> 0</span>%</li>
+                <li>
+                  Wind:
+                  <span id="wind"> 2</span>km/h
+                </li>
+                <li>Sunrise:<span id="sunrise"> 8AM</span></li>
+                <li>
+                  Sunset:
+                  <span id="sunset"> 10PM</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="col-md-6 current-stats">
-            <ul>
-              <li>Humidity: <span id="humidity"> 0</span>%</li>
-              <li>
-                Wind:
-                <span id="wind"> 2</span>km/h
-              </li>
-              <li>Sunrise:<span id="sunrise"> 8AM</span></li>
-              <li>
-                Sunset:
-                <span id="sunset"> 10PM</span>
-              </li>
-            </ul>
-          </div>
+        
 
-          <!-- <div class="col-md-4 main-icon">
+        <!-- <div class="col-md-4 main-icon">
           <img id="main-icon" src="image/15-Sun.png" />
-        </div>
+          </div>
         <div class="col-md-4 current-temp">
           <span class="temperature" id="temperature">30</span>
           <span class="units"> °C </span>
@@ -90,7 +93,7 @@
           <br />
           Sunset: <span id="sunset"> 10PM</span>
         </div> -->
-        </div>
+
         <br />
         <div class="row next-days">
           <div class="col-2">
