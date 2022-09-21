@@ -46,13 +46,13 @@ li {
   font-size: 10px;
 }
 .current-weather {
-  margin: 0 100px;
+  margin: 0 80px;
   padding: 5px;
   max-width: 70%;
 }
 
 .current-temp {
-  text-align: right;
+  text-align: center;
   font-family: "Quicksand", sans-serif;
   font-size: 60px;
   font-weight: 400;
@@ -68,6 +68,7 @@ li {
   font-size: 11px;
   text-align: center;
   font-family: "Quicksand", sans-serif;
+  line-height: 13px;
 }
 
 .d-flex {
