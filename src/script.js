@@ -7,7 +7,7 @@ let days = [
   "Wednesday",
   "Thursdsay",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let hour = now.getHours();
@@ -19,18 +19,20 @@ let dateFormat = document.querySelector("h2");
 dateFormat.innerHTML = `${day}, ${hour}:${minutes} ${meridiem}`;
 // Update City Name & Temp
 function showWeatherConditions(response) {
-  document.querySelector("h1").innerHTML = response.data.name;
+  console.log(response.data);
+  document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
   // humidity
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   //wind
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+
   console.log(response.data);
   // sunrise
   let sunrise = response.data.sys.sunrise;
@@ -64,6 +66,7 @@ function updateCity(event) {
   let units = "metric";
   let apiUrl = `${prefix}q=${cityName}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeatherConditions);
+  console.log(apiUrl);
 }
 let city = document.querySelector("#searchCity");
 city.addEventListener("submit", updateCity);
