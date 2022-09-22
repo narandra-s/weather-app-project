@@ -20,15 +20,21 @@ dateFormat.innerHTML = `${day}, ${hour}:${minutes} ${meridiem}`;
 // Update City Name
 
 function showWeatherConditions(response) {
+  console.log(response.data.weather[0].icon);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#date-time").innerHTML = updateTime(
-    response.data.timezone * 1000
-  );
+  //icon
+  let updatedIcon = response.data.weather[0].icon;
+  document
+    .querySelector("#main-icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${updatedIcon}@2x.png`
+    );
 
   // humidity
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -95,13 +101,6 @@ city.addEventListener("submit", updateCity);
 // celsiusLink.addEventListener("click", convertToCelsius);
 
 // Current location Weather
-function showCurrentTemperature(response) {
-  document.querySelector("h1").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-}
-
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
