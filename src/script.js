@@ -20,6 +20,7 @@ dateFormat.innerHTML = `${day}, ${hour}:${minutes} ${meridiem}`;
 // Update City Name, Temp & Stats
 
 function showWeatherConditions(response) {
+  console.log(response.data);
   celsiusTemp = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
@@ -93,9 +94,7 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
