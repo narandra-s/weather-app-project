@@ -51,7 +51,13 @@ li {
   padding: 5px;
   max-width: 100%;
 }
-
+.weather-temperature .active {
+  color: #212529;
+  text-decoration: none;
+}
+.weather-temperature .active:hover {
+  cursor: default;
+}
 .current-temp {
   text-align: center;
   font-family: "Quicksand", sans-serif;
