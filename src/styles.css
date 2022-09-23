@@ -49,7 +49,7 @@ li {
 .current-weather {
   margin: 0 80px;
   padding: 5px;
-  max-width: 70%;
+  max-width: 100%;
 }
 
 .current-temp {
@@ -92,21 +92,31 @@ li {
   padding: 0;
   font-family: "Quicksand", sans-serif;
 }
-#submitBtn {
-  margin-left: -20px;
+#cityName {
+  border: 1px solid #5c636a;
+  border-radius: 3px;
 }
-#submitBtn:hover {
-  background-color: #615753;
-}
-
 #cityName:focus {
   outline: none !important;
   border-color: #ff6f3c;
   box-shadow: 0 0 5px #ff6f3c;
 }
+#submitBtn {
+  margin-left: -115px;
+  font-size: 14px;
+  padding: 4.1px 10px;
+  border: 1px solid #5c636a;
+  border-radius: 3px;
+}
+#submitBtn:hover {
+  background-color: #5c636a;
+  color: antiquewhite;
+}
+
 .btn-secondary {
   width: 130px;
   font-size: 13px;
+  border-radius: 3px;
 }
 .units {
   text-decoration: none;
@@ -117,7 +127,4 @@ li {
   margin: -20px;
   position: relative;
   top: -30px;
-}
-.current-weather {
-  max-width: 95%;
 }

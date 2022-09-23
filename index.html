@@ -43,7 +43,7 @@
                 <input
                   type="search"
                   id="cityName"
-                  class="form-control"
+                  class="form-control-sm"
                   placeholder="Search for a city"
                   autofocus="on"
                 />
@@ -53,7 +53,7 @@
                   type="submit"
                   id="submitBtn"
                   value="Search"
-                  class="btn btn-outline-dark"
+                  class="bt btn-outline-dark"
                 />
               </div>
               <div class="col-4">
@@ -73,7 +73,11 @@
               <div class="col-md-6 current-temp">
                 <img id="main-icon" src="image/15-Sun.png" />
                 <span class="temperature" id="temperature">30</span>
-                <span class="units"> °C | <a href="#">°F</a> </span>
+                <span class="units">
+                  <a href="#" id="celsius-link"> °C</a>
+                  |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
               </div>
               <div class="col-md-6 current-stats">
                 <ul>

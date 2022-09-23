@@ -17,14 +17,12 @@ hour = hour ? hour : 12;
 let minutes = String(now.getMinutes()).padStart(2, "0");
 let dateFormat = document.querySelector("#date-time");
 dateFormat.innerHTML = `${day}, ${hour}:${minutes} ${meridiem}`;
-// Update City Name
+// Update City Name, Temp & Stats
 
 function showWeatherConditions(response) {
-  console.log(response.data.weather[0].icon);
+  celsiusTemp = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   //icon
@@ -78,27 +76,29 @@ function updateCity(event) {
 let city = document.querySelector("#searchCity");
 city.addEventListener("submit", updateCity);
 
-// // Fahrenheint to Celsius
-// function convertToFahrenheit(event) {
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-//   let temperature = temperatureElement.innerHTML;
-//   temperature = Number(temperature);
-//   temperatureElement.innerHTML = Math.round(temperature * 9) / 5 + 32;
-// }
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let celsiusTemp = null;
+let fahrenheitTemp = null;
+// Celsius to Fahrenheit
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = celsiusTemp;
+  // temperature = Number(temperature);
+  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+}
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-// // Celsius to Fahrenheint
-// function convertToCelsius(event) {
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-//   let temperature = temperatureElement.innerHTML;
-//   temperature = Number(temperature);
-//   temperatureElement.innerHTML = Math.round((temperature - 32) * 5) / 9;
-// }
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", convertToCelsius);
+// Fahrenheint to Celsius
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = temperatureElement.innerHTML;
+  temperature = Number(temperature);
+  temperatureElement.innerHTML = Math.round((temperature - 32) * 5) / 9;
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 // Current location Weather
 function showPosition(position) {
