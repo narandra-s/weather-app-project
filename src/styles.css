@@ -61,7 +61,7 @@ li {
 .current-temp {
   text-align: center;
   font-family: Quicksand, sans-serif;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 400;
   color: #ff6f3c;
   padding: 0;
@@ -127,10 +127,10 @@ li {
 .units {
   text-decoration: none;
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  margin-left: -12px;
+  margin-left: -10px;
   position: relative;
-  top: -25px;
+  top: -30px;
 }
